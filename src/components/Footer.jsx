@@ -1,5 +1,5 @@
 "use client"
-
+import { FaPhoneFlip } from "react-icons/fa6";
 import { Facebook, Twitter, Instagram, Linkedin, ArrowUp, Send } from "lucide-react"
 
 const Footer = () => {
@@ -159,6 +159,14 @@ const Footer = () => {
       >
         <ArrowUp className="h-5 w-5" />
       </button>
+
+      <a
+        href="tel:+919999999999"
+        className="fixed bottom-6 right-6 bg-orange-500 hover:bg-orange-600 transition-colors p-3 rounded-full shadow-lg"
+        aria-label="Scroll to top"
+      >
+        <FaPhoneFlip className="h-5 w-5" /> 
+      </a>
     </footer>
   )
 }

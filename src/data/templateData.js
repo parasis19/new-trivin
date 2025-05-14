@@ -7,7 +7,7 @@ export const templateData = [
     image: "t1.png",
     previewUrl: "https://www.trivinsai.com/",
     file: "/files/template-1.zip", // Add the file URL here
-    nameUrl: "/templates/name-1", // Add the specific URL for the template details page
+    detailsUrl: "https://www.trivinsai.com/", // Add the specific URL for the template details page
   },
   {
     id: 2,
