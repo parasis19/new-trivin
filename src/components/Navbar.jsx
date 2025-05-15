@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className="flex  items-center justify-between">
           <div className="flex items-center">
             <a href="#" className="">
-              <img src="/poto.png" alt="" 
+              <img src="/trivnL.png" alt="" 
               className=" h-16"
               />
             </a>
@@ -46,9 +46,7 @@ const Navbar = () => {
             <a href="#services" className="text-gray-800 hover:text-orange-500 transition-colors">
               Services
             </a>
-            <a href="#portfolio" className="text-gray-800 hover:text-orange-500 transition-colors">
-              Work
-            </a>
+
             <a href="#testimonials" className="text-gray-800 hover:text-orange-500 transition-colors">
               Testimonials
             </a>
@@ -62,7 +60,7 @@ const Navbar = () => {
 
           {/* Mobile Navigation Toggle */}
           <div className="md:hidden">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-800 focus:outline-none">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-800  focus:outline-none">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -93,13 +91,7 @@ const Navbar = () => {
               >
                 Services
               </a>
-              <a
-                href="#portfolio"
-                className="text-gray-800 hover:text-orange-500 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Work
-              </a>
+
               <a
                 href="#testimonials"
                 className="text-gray-800 hover:text-orange-500 transition-colors"
