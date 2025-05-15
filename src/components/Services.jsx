@@ -37,7 +37,7 @@ const Services = () => {
             <div
               key={index}
               className="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl  border-4 border-gray-300 group hover:border-orange-500 transition-all duration-300 ease-in-out"
-            >200
+            >
               <div className="mb-6 p-4 bg-orange-50 rounded-full inline-block group-hover:bg-orange-100 transition-colors">
                 {service.icon}
               </div>
