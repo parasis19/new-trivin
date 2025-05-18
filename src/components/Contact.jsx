@@ -61,7 +61,7 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#040866] mb-4">Get In Touch</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Ready to start your next digital project? Contact us today and let's create something amazing together.
           </p>
@@ -69,7 +69,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="bg-white rounded-xl shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+            <h3 className="text-2xl font-bold text-[#040866] mb-6">Send Us a Message</h3>
 
             {submitSuccess && (
               <div className="rounded-full bg-green-50 border border-green-200 text-green-700   p-4 mb-6">
@@ -80,7 +80,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+                  <label htmlFor="name" className="block text-[#040866] font-medium mb-2">
                     Your Name
                   </label>
                   <input
@@ -96,7 +96,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="  block text-gray-700 font-medium mb-2">
+                  <label htmlFor="email" className="  block text-[#040866] font-medium mb-2">
                     Email Address
                   </label>
                   <input
@@ -114,7 +114,7 @@ const Contact = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
+                  <label htmlFor="phone" className="block text-[#040866] font-medium mb-2">
                     Phone Number
                   </label>
                   <input
@@ -129,7 +129,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="service" className="block text-gray-700 font-medium mb-2">
+                  <label htmlFor="service" className="block text-[#040866] font-medium mb-2">
                     Service Interested In
                   </label>
                   <select
@@ -150,7 +150,7 @@ const Contact = () => {
               </div>
 
               <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="message" className="block text-[#040866] font-medium mb-2">
                   Your Message
                 </label>
                 <textarea

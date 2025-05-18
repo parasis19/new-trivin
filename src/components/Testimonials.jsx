@@ -1,7 +1,6 @@
-"use client"
-
-import { useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { ChevronLeft, ChevronRight, Star } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 const Testimonials = () => {
   const testimonials = [
@@ -35,6 +34,7 @@ const Testimonials = () => {
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0)
+  const intervalRef = useRef(null)
 
   const nextTestimonial = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
@@ -43,6 +43,11 @@ const Testimonials = () => {
   const prevTestimonial = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
   }
+
+  useEffect(() => {
+    intervalRef.current = setInterval(nextTestimonial, 5000)
+    return () => clearInterval(intervalRef.current)
+  }, [])
 
   return (
     <section id="testimonials" className="py-20 bg-white">
@@ -55,42 +60,58 @@ const Testimonials = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-orange-50 rounded-2xl p-8 md:p-12 shadow-lg">
+          <div className="relative bg-orange-50 rounded-2xl p-8 md:p-12 shadow-lg overflow-hidden min-h-[300px]">
             <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2">
               <div className="text-6xl text-orange-500 opacity-20">"</div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center">
-              <div className="mb-6 md:mb-0 md:mr-8">
-                <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-md">
-                  <img
-                    src={testimonials[currentIndex].image || "/placeholder.svg"}
-                    alt={testimonials[currentIndex].name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={testimonials[currentIndex].id}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -30 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="flex flex-col md:flex-row items-center">
+                  <div className="mb-6 md:mb-0 md:mr-8">
+                    <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-md">
+                      <img
+                        src={testimonials[currentIndex].image}
+                        alt={testimonials[currentIndex].name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
 
-              <div className="flex-1">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`h-5 w-5 ${i < testimonials[currentIndex].rating ? "text-yellow-500 fill-yellow-500" : "text-gray-300"}`}
-                    />
-                  ))}
-                </div>
+                  <div className="flex-1">
+                    <div className="flex mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`h-5 w-5 ${
+                            i < testimonials[currentIndex].rating
+                              ? "text-yellow-500 fill-yellow-500"
+                              : "text-gray-300"
+                          }`}
+                        />
+                      ))}
+                    </div>
 
-                <blockquote className="text-lg md:text-xl text-gray-700 italic mb-6">
-                  "{testimonials[currentIndex].quote}"
-                </blockquote>
+                    <blockquote className="text-lg md:text-xl text-gray-700 italic mb-6">
+                      "{testimonials[currentIndex].quote}"
+                    </blockquote>
 
-                <div>
-                  <h4 className="text-xl font-bold text-gray-900">{testimonials[currentIndex].name}</h4>
-                  <p className="text-gray-600">{testimonials[currentIndex].position}</p>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">
+                        {testimonials[currentIndex].name}
+                      </h4>
+                      <p className="text-gray-600">{testimonials[currentIndex].position}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </AnimatePresence>
 
             <div className="flex justify-between mt-8">
               <button
@@ -106,7 +127,9 @@ const Testimonials = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}
-                    className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-orange-500" : "bg-gray-300"}`}
+                    className={`w-3 h-3 rounded-full ${
+                      currentIndex === index ? "bg-orange-500" : "bg-gray-300"
+                    }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
                 ))}

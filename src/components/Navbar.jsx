@@ -28,15 +28,15 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex  items-center justify-between">
           <div className="flex items-center">
-            <a href="#" className="">
-              <img src="/trivnL.png" alt="" 
-              className=" h-16"
+            <a href="#" className="ml-4">
+              <img src="/logo.png" alt="" 
+              className=" h-14 "
               />
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <div className=" hidden py-1 bg-transparent backdrop-blur-xl md:flex items-center space-x-8">
+          <div className=" hidden py-1 bg-transparent backdrop-blur-xl md:flex items-center space-x-8 ">
             <a href="#" className="text-gray-800 hover:text-orange-500 transition-colors">
               Home
             </a>
@@ -52,7 +52,7 @@ const Navbar = () => {
             </a>
             <a
               href="#contact"
-              className="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors"
+              className="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600  transition-colors"
             >
               Contact Us
             </a>

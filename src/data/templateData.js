@@ -1,13 +1,16 @@
 // templatesData.js
 export const templateData = [
+  
   {
     id: 1,
     title: "Template 1",
     category: "business",
     image: "t1.png",
     previewUrl: "https://www.trivinsai.com/",
+    
     file: "/files/template-1.zip", // Add the file URL here
-    detailsUrl: "https://www.trivinsai.com/", // Add the specific URL for the template details page
+    detailsUrl: "", // Add the specific URL for the template details page
+    description: "A modern and optimized looking website.",
   },
   {
     id: 2,
@@ -17,6 +20,7 @@ export const templateData = [
     previewUrl: "https://www.trivinsai.com/",
     file: "/files/template-2.zip", // Add the file URL here
     nameUrl: "/templates/name-2", // Add the specific URL for the template details page
+    description: "A modern and optimized looking website."
   },
   {
     id: 3,

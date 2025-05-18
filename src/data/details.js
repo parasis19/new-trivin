@@ -1,1 +1,1 @@
-export const detailsdata = [
+// export const detailsdata = [
